@@ -34,6 +34,8 @@ import {
 import "./App.css";
 import Footer from "./footer";
 import { useContext, useRef, useState } from "react";
+import ClassProps from "./ClassProps";
+import FunctionProps from "./FunctionProps";
 
 function App() {
   const inputReference = useRef(null);
@@ -68,7 +70,7 @@ function App() {
   }
 
   function LeftArrow() {
-    const {  scrollPrev } = useContext(VisibilityContext);
+    const { scrollPrev } = useContext(VisibilityContext);
 
     return (
       <div>
@@ -81,7 +83,7 @@ function App() {
   }
 
   function RightArrow() {
-    const {  scrollNext } = useContext(VisibilityContext);
+    const { scrollNext } = useContext(VisibilityContext);
     return (
       // <img
       //   src={search}
@@ -95,13 +97,18 @@ function App() {
     );
   }
 
-  function Card({ onClick, selected, title, unitPrice, actualPrice, discountedPrice , image }) {
+  function Card({
+    onClick,
+    selected,
+    title,
+    unitPrice,
+    actualPrice,
+    discountedPrice,
+    image,
+  }) {
     return (
       <div className="new_arrivals_image">
-        <img
-          src={image}
-          alt=""
-        />
+        <img src={image} alt="" />
         <h3>{title}</h3>
         <p>{unitPrice}</p>
         <span>
@@ -344,6 +351,8 @@ function App() {
           </div>
         </div>
       </div>
+      <ClassProps name="Sheeraz" age="26"/>
+      <FunctionProps name="Shariq"/>
     </div>
   );
 }
